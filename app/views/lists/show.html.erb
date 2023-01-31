@@ -1,0 +1,17 @@
+<div class="container mt-3">
+  <h1><%= @list.name %></h1>
+  <%= link_to "Home", root_path %>
+  <%= link_to "+ Add Bookmark", new_list_bookmark_path(@list) %>
+  <hr>
+  <ul>
+    <% @list.movies.each do |movie| %>
+      <li>
+        <div class="container">
+        <h3><%= movie.title %></h3>
+        <img src="<%= movie.poster_url %>" style="width:400px" alt="<%= movie.title %>">
+        <p><%= movie.overview %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
